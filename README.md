@@ -3,6 +3,9 @@ Ruby code to subscribe to MusicCast push events (volume control etc) in a non-bl
 
 Uses event-loop. Example:
 
+```
+  yamaha = YamahaAv.new("192.168.1.207", "44FE3B601F52", debug: false)
+  
   yamaha.on_new_status('main', "input") { |x|
     pp [:input, x]
   }
@@ -14,25 +17,28 @@ Uses event-loop. Example:
   yamaha.on_new_status('func', "hdmi_out_1") { |x|
     pp [:hdmi, x]
   }
+```
 
 ->
 
-# ruby yamaha_av.rb
-Yamaha new status: Setting volume: 60
-[:volume, 60]
-Yamaha new status: Setting input: "tuner"
-[:input, "tuner"]
-Yamaha new status: Setting hdmi_out_1: true
-[:hdmi, true]
-Yamaha new status: Setting volume: 61
-[:volume, 61]
-Yamaha new status: Setting volume: 60
-[:volume, 60]
-Yamaha new status: Setting input: "alexa"
-[:input, "alexa"]
-Yamaha new status: Setting input: "tuner"
-[:input, "tuner"]
-Yamaha new status: Setting hdmi_out_1: false
-[:hdmi, false]
-Yamaha new status: Setting hdmi_out_1: true
-[:hdmi, true]
+```
+  # ruby yamaha_av.rb
+  Yamaha new status: Setting volume: 60
+  [:volume, 60]
+  Yamaha new status: Setting input: "tuner"
+  [:input, "tuner"]
+  Yamaha new status: Setting hdmi_out_1: true
+  [:hdmi, true]
+  Yamaha new status: Setting volume: 61
+  [:volume, 61]
+  Yamaha new status: Setting volume: 60
+  [:volume, 60]
+  Yamaha new status: Setting input: "alexa"
+  [:input, "alexa"]
+  Yamaha new status: Setting input: "tuner"
+  [:input, "tuner"]
+  Yamaha new status: Setting hdmi_out_1: false
+  [:hdmi, false]
+  Yamaha new status: Setting hdmi_out_1: true
+  [:hdmi, true]
+```
